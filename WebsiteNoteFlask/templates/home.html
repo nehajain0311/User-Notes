@@ -1,0 +1,33 @@
+<!--this template will be exactly as base.html just change the msg within curly braces block -->
+
+{% extends "base.html" %}
+{% block title %}HOME{% endblock %}
+{% block content%}
+{% if boolean==True %}
+<h1>This is {{fname}} {{lname + "'s"}} home page<h1>
+    {% else %}
+    <h1>This if else block</h1>
+    {% endif %}
+
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %} <!--User class's note object is accessed here which is the instance of note associated with the specific user instance -->
+  <li class="list-group-item">
+    {{ note.data }} <!--Only the data variable of Notes class is accessed,
+    which is a text coming from textarea of form and first stored in db.model(Note) and then accessed from there-->
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})"> <!--Only the id variable of Notes verified,
+     it is the same id of Notes for the textarea--><!--deleteNote is a javascript function-->
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Note</button>
+  </div>
+</form>
+    
+    {% endblock %}
