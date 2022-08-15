@@ -1,4 +1,4 @@
-#https://www.youtube.com/watch?v=dam0GPOAvVI&ab_channel=TechWithTim
+
 # use of jinja time 49 minutes
 
 from flask import Blueprint,render_template,request,flash,redirect,url_for
