@@ -1,4 +1,4 @@
-#https://www.youtube.com/watch?v=dam0GPOAvVI&ab_channel=TechWithTim
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
